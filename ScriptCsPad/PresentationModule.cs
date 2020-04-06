@@ -16,7 +16,7 @@ using Roslyn.Services;
 using Roslyn.Services.Host;
 
 using ScriptCs;
-
+using ScriptCs.Contracts;
 using ScriptCsPad.Completion;
 using ScriptCsPad.Extensions;
 

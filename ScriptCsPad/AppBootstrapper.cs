@@ -12,7 +12,7 @@ using IContainer = Autofac.IContainer;
 
 namespace ScriptCsPad
 {
-    public class AppBootstrapper : Bootstrapper<ShellViewModel>
+    public class AppBootstrapper : BootstrapperBase/*<ShellViewModel>*/
     {
         private IContainer _container;
 

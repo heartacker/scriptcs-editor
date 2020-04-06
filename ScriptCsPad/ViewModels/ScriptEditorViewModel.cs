@@ -32,7 +32,7 @@ namespace ScriptCsPad.ViewModels
 
         public IText CurrentText { get; private set; }
 
-        public event EventHandler<TextChangeEventArgs> TextChanged;
+        public event EventHandler<Roslyn.Compilers.TextChangeEventArgs> TextChanged;
 
         public IHighlightingDefinition Highlighting { get; set; }
 
@@ -97,7 +97,7 @@ namespace ScriptCsPad.ViewModels
             }
         }
 
-        protected virtual void OnTextChanged(TextChangeEventArgs e)
+        protected virtual void OnTextChanged(Roslyn.Compilers.TextChangeEventArgs e)
         {
             var handler = TextChanged;
             if (handler != null) handler(this, e);
@@ -123,7 +123,7 @@ namespace ScriptCsPad.ViewModels
         private void OnDocumentChanged(object sender, DocumentChangeEventArgs e)
         {
             CurrentText = new StringText(Document.Text);
-            OnTextChanged(new TextChangeEventArgs(OldText, CurrentText, new TextChangeRange[0]));
+            OnTextChanged(new Roslyn.Compilers.TextChangeEventArgs(OldText, CurrentText, new TextChangeRange[0]));
         }
 
         private void OnUndoStackPropertyChanged(object sender, PropertyChangedEventArgs e)

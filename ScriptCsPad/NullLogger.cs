@@ -147,5 +147,11 @@ namespace ScriptCsPad
         public bool IsInfoEnabled { get; private set; }
 
         public bool IsWarnEnabled { get; private set; }
+
+        public IVariablesContext GlobalVariablesContext => throw new NotImplementedException();
+
+        public IVariablesContext ThreadVariablesContext => throw new NotImplementedException();
+
+        public INestedVariablesContext NestedThreadVariablesContext => throw new NotImplementedException();
     }
 }

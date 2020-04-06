@@ -1,14 +1,17 @@
 ﻿using Autofac;
 using Autofac.Core;
-
+using Autofac.Core.Registration;
 using Caliburn.Micro;
 
 namespace ScriptCsPad
 {
     public class AutosubscriberModule : Module
     {
-        protected override void AttachToComponentRegistration(IComponentRegistry componentRegistry, IComponentRegistration registration)
+
+
+        protected override void AttachToComponentRegistration(IComponentRegistryBuilder componentRegistry, IComponentRegistration registration)
         {
+            //base.AttachToComponentRegistration(componentRegistry, registration);
             registration.Activated += OnComponentActivated;
         }
 
